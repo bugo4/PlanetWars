@@ -4,6 +4,37 @@
 # [GCC 7.5.0]
 # Embedded file name: bots/DemoBot.py
 # Compiled at: 2014-02-06 15:56:27
+def which_side(pw):
+    my_planets = pw.my_planets()
+    return my_planets[0].y() == 14.2766890117
+
+
+def get_planet(planets,  y):
+    for planet in planets:
+        if planet.y() == y:
+            return planet.planet_id()
+            
+
+def attack(pw):
+    my_planets == pw.my_planets()
+    turn = pw.turn_number()
+    if turn == 1:
+        side = which_side(pw)
+        if side:
+            y1 = 18.0593851211
+            y2 = 20.0561682576
+        else:
+            y1 = 5.25808971821
+            y2 = 3.26130658173
+        planet_id = get_planet(pw.planets(), y1)
+        pw.issue_order(my_planets[0].planet_id(), planet_id, 10)
+        planet_id = get_planet(pw.planets(), y2)
+        pw.issue_order(my_planets[0].planet_id(), planet_id, 36)
+    else:
+        e_fleets = pw.enemy_fleets()
+        a_fleets = pw.my_fleets()
+        planets = pw.planets()
+
 
 
 def do_turn(pw):
